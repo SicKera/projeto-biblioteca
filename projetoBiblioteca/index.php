@@ -17,7 +17,8 @@
         <a href="back/verificarCadastro.php">Buscar Usuário Cadastrado</a>
         <a href="back/atualizarCadastro.php">Atualizar Cadastro</a>
         <a href="back/excluirUsuario.php">Excluir Cadastro</a>
-        <a href="">Histórico de Alugueis</a>
+        <a href="back/listaLivros.php">Lista de Livros</a>
+        <a href="back/listaUsuarios.php">Lista Usuários</a>
     </div>
 </body>
 </html>

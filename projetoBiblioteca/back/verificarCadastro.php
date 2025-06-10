@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../estilos/styleVerificar.css">
-    <title>Buscar Usuário</title>
+    <title>Lista de Usuários</title>
 </head>
 <body>
     <header>
@@ -12,7 +12,7 @@
             <ul>
                 <li><a href="../index.php">Início</a></li>
                 <li><a href="cadastro.php">Cadastrar Usuário</a></li>
-                <li><a href="verificarCadastro.php">Listas Usuários</a></li>
+                <li><a href="verificarCadastro.php">Lista de Livros</a></li>
             </ul>
         </nav>
     </header>

@@ -33,10 +33,10 @@
 
             <label for="genero">Gênero:</label>
             <select name="genero" id="genero">
-                <option value="gen1">Genero 1</option>
-                <option value="gen2">Genero 2</option>
-                <option value="gen3">Genero 3</option>
-                <option value="gen4">Genero 4</option>
+                <option value="ficcao">Ficção</option>
+                <option value="romance">Romance</option>
+                <option value="suspense">Suspense</option>
+                <option value="policial">Policial</option>
             </select>
 
             <label for="isbn">Codigo ISBN</label>
