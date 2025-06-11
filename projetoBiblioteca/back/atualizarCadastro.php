@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../estilos/styleAtualizar.css">
     <title>Atualização de Cadastro</title>
 </head>
 <body>
@@ -63,7 +64,7 @@
                     <input type="text" name="nome" id="nome" value="' . $row["nome_usuario"] . '" required>
 
                     <label for="email">E-mail:</label>
-                    <input type="text" name="email" id="email" value="' . $row["email_usuario"] . '" required>
+                    <input type="text" name="email" id="email" value="' . $row["email_usuario"] . '" readonly>
                     
                     <label for="cidade">Cidade:</label>
                     <input type="text" name="cidade" id="cidade" value="' . $row["cidade_usuario"] . '" required>

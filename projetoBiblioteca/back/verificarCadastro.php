@@ -12,7 +12,7 @@
             <ul>
                 <li><a href="../index.php">Início</a></li>
                 <li><a href="cadastro.php">Cadastrar Usuário</a></li>
-                <li><a href="verificarCadastro.php">Lista de Livros</a></li>
+                <li><a href="listaLivros.php">Lista de Livros</a></li>
             </ul>
         </nav>
     </header>
@@ -55,15 +55,23 @@
                     $resultado = $stmt->get_result();
                     // echo var_dump($resultado);
                     
-                    if($resultado->num_rows > 0){
-                        // Se o número de linhas for maior que zero
-                        // echo "Usuário já cadastrado";
-                        // Armazenar as informações dele
-                        $row = $resultado->fetch_assoc();
-                        echo var_dump($row);
-                        // Caso o número de linhas for igual a zero
-                    }else{
-                        echo "Usuário inexistente!";
+                    if ($resultado->num_rows > 0) {
+                        echo "<table border='1'>";
+                        echo "<tr><th>ID</th><th>Nome</th><th>Email</th><th>Idade</th><th>Cidade</th></tr>";
+
+                        while ($row = $resultado->fetch_assoc()) {
+                            echo "<tr>";
+                            echo "<td>" . htmlspecialchars($row['id_usuario']) . "</td>";
+                            echo "<td>" . htmlspecialchars($row['nome_usuario']) . "</td>";
+                            echo "<td>" . htmlspecialchars($row['email_usuario']) . "</td>";
+                            echo "<td>" . htmlspecialchars($row['idade_usuario']) . "</td>";
+                            echo "<td>" . htmlspecialchars($row['cidade_usuario']) . "</td>";
+                            echo "</tr>";
+                        }
+
+                        echo "</table>";
+                    } else {
+                        echo "Nenhum usuário cadastrado!";
                     }
                 }
             ?>

@@ -37,6 +37,9 @@
                 <option value="romance">Romance</option>
                 <option value="suspense">Suspense</option>
                 <option value="policial">Policial</option>
+                <option value="aventura">Aventura</option>
+                <option value="tecnologia">Tecnologia</option>
+                <option value="historia">História</option>
             </select>
 
             <label for="isbn">Codigo ISBN</label>

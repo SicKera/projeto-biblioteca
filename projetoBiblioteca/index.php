@@ -12,13 +12,14 @@
 
     <div class="menu">
         <a href="back/cadastroLivro.php">Cadastro de Livros</a>
-        <a href="back/cadastro.php">Cadastro de Usuários</a>
-        <a href="back/verificarLivros.php">Buscar Livro Cadastrado</a>
-        <a href="back/verificarCadastro.php">Buscar Usuário Cadastrado</a>
-        <a href="back/atualizarCadastro.php">Atualizar Cadastro</a>
-        <a href="back/excluirUsuario.php">Excluir Cadastro</a>
         <a href="back/listaLivros.php">Lista de Livros</a>
-        <a href="back/listaUsuarios.php">Lista Usuários</a>
+        <a href="back/verificarLivros.php">Buscar Livro</a>
+        <a href="back/excluirLivro.php">Excluir Livro</a>
+        <a href="back/cadastro.php">Cadastro de Usuários</a>
+        <a href="back/listaUsuarios.php">Lista de Usuários</a>
+        <a href="back/verificarCadastro.php">Buscar Usuário</a>
+        <a href="back/atualizarCadastro.php">Atualizar Usuário</a>
+        <a href="back/excluirUsuario.php">Excluir Usuário</a>
     </div>
 </body>
 </html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../estilos/styleVerificar.css">
-    <title>Excluir Usuário</title>
+    <title>Excluir Livro</title>
 </head>
 <body>
     <header>
@@ -19,7 +19,7 @@
     <main>
         <section>
             <form action="" method="post">
-                <input type="email" name="email" id="email" placeholder="Digite o E-mail">
+                <input type="text" name="titulo" id="titulo" placeholder="Digite o titulo do livro">
                 <input type="submit" value="Excluir">
             </form>
         </section>
@@ -28,19 +28,19 @@
             <?php
 
                 // verificar se o campo email está preenchido
-                if(isset($_POST["email"])){
+                if(isset($_POST["titulo"])){
 
                     // Exibir as informaçãoes passadas pelo forms
                     // echo var_dump($_POST);
                 
                     // Salva as informações de email enviada pelo forms
-                    $email = $_POST["email"];
+                    $titulo = $_POST["titulo"];
                     
                     // Recebe as informações de conexão do DB
                     include("../conexao/conexao.php");
 
                     // Query de banco de dados
-                    $sql = "DELETE FROM  cadastro_usuario WHERE email_usuario = ?";
+                    $sql = "DELETE FROM cadastro_livros WHERE titulo = ?";
 
                     // Preparar a conexão junto da consulta
                     $stmt = $conn ->prepare($sql);
@@ -48,7 +48,7 @@
                     // Validando se a conexão foi feita com sucesso
                     if($stmt){
                         // Troca a informaçõa de e-mail por '?' no $sql
-                        $stmt->bind_param("s", $email);
+                        $stmt->bind_param("s", $titulo);
                     }
                     // Executar o comando
                     $stmt->execute();
@@ -56,9 +56,9 @@
                     // echo var_dump($resultado);
                     
                     if($stmt->affected_rows > 0){if($stmt->affected_rows > 0){
-                            echo "<p>Usuário excluído com sucesso!</p>";
+                            echo "<p>Livro excluído com sucesso!</p>";
                             } else {
-                            echo "<p>Nenhum usuário encontrado com o e-mail informado.</p>";
+                            echo "<p>Nenhum livro encontrado com o titulo informado.</p>";
                             }
 
                             $stmt->close();
@@ -68,7 +68,6 @@
 
                             $conn->close();
                 }
-                
             ?>
 
         </section>

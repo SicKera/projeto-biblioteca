@@ -12,7 +12,7 @@
         <nav>
             <ul>
                 <li><a href="../index.php">Início</a></li>
-                <li><a href="">Cadastrar Livro</a></li>
+                <li><a href="cadastroLivro.php">Cadastrar Livro</a></li>
                 <li><a href="verificarCadastro.php">Buscar Usuário</a></li>
             </ul>
         </nav>

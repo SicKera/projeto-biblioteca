@@ -12,14 +12,14 @@
             <ul>
                 <li><a href="../index.php">Início</a></li>
                 <li><a href="cadastro.php">Cadastrar Usuário</a></li>
-                <li><a href="verificarCadastro.php">Listas Usuários</a></li>
+                <li><a href="verificarCadastro.php">Buscar Usuários</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <section>
             <form action="" method="post">
-                <input type="text" name="nome" id="nome" placeholder="Digite o nome do livro...">
+                <input type="text" name="titulo" id="titulo" placeholder="Digite o nome do livro...">
                 <input type="submit" value="Buscar">
             </form>
         </section>
@@ -28,13 +28,13 @@
             <?php
 
                 // verificar se o campo email está preenchido
-                if(isset($_POST["nome"])){
+                if(isset($_POST["titulo"])){
 
                     // Exibir as informaçãoes passadas pelo forms
-                    echo var_dump($_POST);
+                    // echo var_dump($_POST);
                 
                     // Salva as informações de email enviada pelo forms
-                    $email = $_POST["nome"];
+                    $titulo = $_POST["titulo"];
                     
                     // Recebe as informações de conexão do DB
                     include("../conexao/conexao.php");
@@ -48,20 +48,27 @@
                     // Validando se a conexão foi feita com sucesso
                     if($stmt){
                         // Troca a informaçõa de e-mail por '?' no $sql
-                        $stmt->bind_param("s", $nome);
+                        $stmt->bind_param("s", $titulo);
                     }
                     // Executar o comando
                     $stmt->execute();
                     $resultado = $stmt->get_result();
-                    echo var_dump($resultado);
+                    // echo var_dump($resultado);
                     
                     if($resultado->num_rows > 0){
-                        // Se o número de linhas for maior que zero
-                        echo "Livro já cadastrado";
-                        // Armazenar as informações dele
-                        $row = $resultado->fetch_assoc();
-                        echo var_dump($row);
-                        // Caso o número de linhas for igual a zero
+                        echo "<table border='1'>";
+                        echo "<tr><th>Titulo</th><th>Autor</th><th>Gênero</th><th>Ano</th></tr>";
+
+                        while ($row = $resultado->fetch_assoc()) {
+                            echo "<tr>";
+                            echo "<td>" . htmlspecialchars($row['titulo']) . "</td>";
+                            echo "<td>" . htmlspecialchars($row['autor']) . "</td>";
+                            echo "<td>" . htmlspecialchars($row['genero']) . "</td>";
+                            echo "<td>" . htmlspecialchars($row['ano']) . "</td>";
+                            echo "</tr>";
+                        }
+
+                        echo "</table>";
                     }else{
                         echo "Livro inexistente!";
                     }

@@ -31,14 +31,15 @@ $resultado = $stmt->get_result();
 
 if ($resultado->num_rows > 0) {
     echo "<table border='1'>";
-    echo "<tr><th>Titulo</th><th>Autor</th><th>Gênero</th><th>Ano</th></tr>";
+    echo "<tr><th>Titulo</th><th>Autor</th><th>Gênero</th><th>Ano</th><th>Código ISBN</th></tr>";
 
     while ($row = $resultado->fetch_assoc()) {
         echo "<tr>";
         echo "<td>" . htmlspecialchars($row['titulo']) . "</td>";
-        echo "<td>" . htmlspecialchars($row['Autor']) . "</td>";
+        echo "<td>" . htmlspecialchars($row['autor']) . "</td>";
         echo "<td>" . htmlspecialchars($row['genero']) . "</td>";
-        echo "<td>" . htmlspecialchars($row['Ano']) . "</td>";
+        echo "<td>" . htmlspecialchars($row['ano']) . "</td>";
+        echo "<td>" . htmlspecialchars($row['codigo_isbn']) . "</td>";
         echo "</tr>";
     }
 
